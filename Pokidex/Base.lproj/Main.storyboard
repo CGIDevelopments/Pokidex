@@ -33,6 +33,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="p8i-CP-eIy"/>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hzI-81-1qt">
                                 <frame key="frameInset" minX="16" minY="124" width="343" height="523"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gJm-24-kH3">
                                     <size key="itemSize" width="105" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -96,6 +97,9 @@
                             <constraint firstItem="dcn-gD-dHe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xqy-vP-53Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="hzI-81-1qt" id="peh-fE-Urm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

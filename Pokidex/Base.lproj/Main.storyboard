@@ -5,11 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="pokemon.ttf">
-            <string>PokemonSolidNormal</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -24,6 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7i-Dk-sZE">
+<<<<<<< HEAD
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POKIDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVN-Fu-6d1">
                                         <constraints>
@@ -45,13 +41,11 @@
                                         </connections>
                                     </button>
                                 </subviews>
+=======
+>>>>>>> parent of 3f83c29... Save 8
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="L6K-zF-9Hs"/>
-                                    <constraint firstAttribute="trailing" secondItem="F4x-PC-yQc" secondAttribute="trailing" constant="8" id="LTd-TT-1u2"/>
-                                    <constraint firstItem="MVN-Fu-6d1" firstAttribute="centerX" secondItem="y7i-Dk-sZE" secondAttribute="centerX" id="YgC-oz-GYx"/>
-                                    <constraint firstAttribute="bottom" secondItem="F4x-PC-yQc" secondAttribute="bottom" constant="8" id="fnU-VE-yhP"/>
-                                    <constraint firstItem="MVN-Fu-6d1" firstAttribute="centerY" secondItem="y7i-Dk-sZE" secondAttribute="centerY" id="jvh-I5-s1O"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-gD-dHe">
@@ -177,6 +171,5 @@
     <resources>
         <image name="4" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
-        <image name="music" width="100" height="100"/>
     </resources>
 </document>

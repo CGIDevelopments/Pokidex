@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
 
@@ -14,13 +15,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBar: UISearchBar!
     
     var pokemon = [Pokemon]()
-<<<<<<< HEAD
+
     var filteredPokemon = [Pokemon]()
+
     var musicPlayer:AVAudioPlayer!
+    
     var inSearchMode = false
     
-=======
->>>>>>> parent of 3f83c29... Save 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         searchBar.returnKeyType = UIReturnKeyType.done
         
         parsePokemonCSV()
+        initAudio()
     }
+    
+    func initAudio() {
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+        do {
+            musicPlayer =  try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+        } catch let err as NSError {
+            print (err.debugDescription)
+        }
+    }
+    
+    
     
     func parsePokemonCSV() {
         
@@ -108,7 +124,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
     
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
@@ -128,17 +143,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collection.reloadData()
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PokemonDetailVC" {
-            if let detailsVC = segue.destination {
-            if let poke = sender as? Pokemon {
-                detailsVC.pokemon = poke
-                }
-            }
+
+    @IBAction func musicBtnPressed(_ sender: UIButton) {
+        if musicPlayer.isPlaying {
+            musicPlayer.pause()
+            sender.alpha = 0.2
+        } else {
+            musicPlayer.play()
+            sender.alpha = 1.0
         }
     }
-    
-
 }
 
